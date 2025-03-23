@@ -39,7 +39,7 @@ jobs:
         run: echo fastspring.paion-data.com > ./initializr-docs/target/generated-docs/reference/html/CNAME
       - name: Deploy documentation to GitHub Pages
         if: github.ref == 'refs/heads/master'
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./initializr-docs/target/generated-docs/reference/html
