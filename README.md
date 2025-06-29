@@ -3,6 +3,9 @@ Wilhelm
 
 [![Apache License Badge]][Apache License, Version 2.0]
 
+__Wilhelm__ is a webservice for proxying the _atomic_ and _concurrent_ API operations on
+[QubitPi/Kugelblitz](https://kugelblitz.qubitpi.org/) and [QubitPi/Horten](https://horten.qubitpi.org/)
+
 Development
 -----------
 
