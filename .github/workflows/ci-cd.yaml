@@ -45,6 +45,7 @@ jobs:
 
   acceptance-tests:
     name: Acceptance Tests
+    needs: pre-commit
     strategy:
       fail-fast: false
       matrix:
