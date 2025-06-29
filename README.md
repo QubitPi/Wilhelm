@@ -3,6 +3,13 @@ Wilhelm
 
 [![Apache License Badge]][Apache License, Version 2.0]
 
+Development
+-----------
+
+```console
+make run
+```
+
 License
 -------
 
