@@ -34,6 +34,8 @@ $ curl -v localhost:8080/health
 Development
 -----------
 
+### Running Locally
+
 ```console
 make run
 ```
@@ -46,6 +48,22 @@ $ curl -v localhost:8080/health
 ...
 < HTTP/1.1 200 OK
 ...
+```
+
+### Installing Code Style Checker
+
+Wilhelm utilizes [pre-commit](https://pre-commit.com/) which sometimes doesn't give very informative
+messages when its check fails in Wilhelm's CI/CD. One approach to make sure pre-commit passes is to run it locally
+by installing it first:
+
+```console
+pip3 install pre-commit
+```
+
+then run pre-commit check which would fix everything in one go:
+
+```console
+pre-commit run -a
 ```
 
 License
