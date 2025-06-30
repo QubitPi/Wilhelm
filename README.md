@@ -11,8 +11,8 @@ any business operation is executed in one atomic request.
 Wilhelm is designed for mapping __one__ UI action to __multiple__ backend requests to ensure the business operation
 is correctly and efficiently carried out. It does NOT handle security aspect, such as Authentication or Authorization,
 or caching which should all be pushed down to its delegating services, i.e. [QubitPi/Kugelblitz] and [QubitPi/Horten].
-For this reason, Wilhelm is suitable for a microservice architecture. More details about the design of Kugelblitz
-can be found at [![DeepWiki badge]][DeepWiki URL]
+For this reason, Wilhelm is suitable for a microservice architecture. More details about the design of Wilhelm can be
+found at [![DeepWiki badge]][DeepWiki URL]
 
 🚀 Quick Start
 --------------
@@ -20,8 +20,10 @@ can be found at [![DeepWiki badge]][DeepWiki URL]
 ### Bootstrapping the Service
 
 ```console
-docker run -d -it -p 8080:8080 jack20191124/wilhelm
+docker run -d -it -p 8080:8080 -e WILHELM_NOTIFICATION_SERVICE_URL=http://my-horten:8080 jack20191124/wilhelm
 ```
+
+where `my-horten` is the [QubitPi/Horten] service identifiers in Docker Compose
 
 ### Healthcheck
 
