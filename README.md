@@ -5,8 +5,8 @@ Wilhelm
 [![Docker Hub][Docker Pulls Badge]][Docker Hub URL]
 [![Apache License Badge]][Apache License, Version 2.0]
 
-__Wilhelm__ is a webservice for proxying the _concurrent_ API requests on [QubitPi/Kugelblitz] and [QubitPi/Horten] so
-that any business operation is executed in one atomic request.
+__Wilhelm__ is a webservice for proxying the _concurrent_ API calls to [QubitPi/Kugelblitz] and [QubitPi/Horten] so that
+any business operation is executed in one atomic request.
 
 Wilhelm is designed for mapping __one__ UI action to __multiple__ backend requests to ensure the business operation
 is correctly and efficiently carried out. It does NOT handle security aspect, such as Authentication or Authorization,
@@ -17,9 +17,13 @@ can be found at [![DeepWiki badge]][DeepWiki URL]
 🚀 Quick Start
 --------------
 
+### Bootstrapping the Service
+
 ```console
 docker run -d -it -p 8080:8080 jack20191124/wilhelm
 ```
+
+### Healthcheck
 
 A healthcheck is right at your service:
 
