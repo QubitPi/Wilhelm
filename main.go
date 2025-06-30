@@ -62,7 +62,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	upstreamURL := fmt.Sprintf("http://%s:8080/dingding/createNotification", os.Getenv("WILHELM_NOTIFICATION_SERVICE_URL"))
+	upstreamURL := fmt.Sprintf("%s/dingding/createNotification", os.Getenv("WILHELM_NOTIFICATION_SERVICE_URL"))
 	req, err := http.NewRequest(http.MethodPost, upstreamURL, bytes.NewBuffer(jsonBody))
 	if err != nil {
 		log.Printf("Error creating upstream request: %v", err)
