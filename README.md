@@ -20,7 +20,7 @@ found at [![DeepWiki badge]][DeepWiki URL]
 ### Bootstrapping the Service
 
 ```console
-docker run -d -it -p 8080:8080 -e WILHELM_NOTIFICATION_SERVICE_URL=http://my-horten:8080 jack20191124/wilhelm
+docker run -d -it -p 8080:8080 -e HORTEN_URL=http://my-horten:8080 jack20191124/wilhelm
 ```
 
 where `my-horten` is the [QubitPi/Horten] service IP or service identifiers in Docker Compose environment
@@ -79,15 +79,15 @@ pre-commit run -a
 It probably isn't Go; it's probably one of our upstream services ([QubitPi/Kugelblitz]/[QubitPi/Horten]) we're trying to
 access responding to what looks like an attempt to flood them, possibly the local DNS resolver.
 
-In a Docker Compose environment, this is most likely the mis-configured service name. Make sure the
-`WILHELM_NOTIFICATION_SERVICE_URL` is set to the DNS name in the environment. For example,
+In a Docker Compose environment, this is most likely the mis-configured service name. Make sure the `HORTEN_URL` is set
+to the DNS name in the environment. For example,
 
 ```yaml
 services:
   wilhelm:
     image: jack20191124/wilhelm
     environment:
-      WILHELM_NOTIFICATION_SERVICE_URL: ${WILHELM_NOTIFICATION_SERVICE_URL}
+      HORTEN_URL: ${HORTEN_URL}
 
   my-horten-prod:
     image: jack20191124/horten
@@ -95,7 +95,7 @@ services:
       - 8765
 ```
 
-In this case `WILHELM_NOTIFICATION_SERVICE_URL=http://my-horten-prod:8765`
+In this case `HORTEN_URL=http://my-horten-prod:8765`
 
 License
 -------
