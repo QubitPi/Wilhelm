@@ -22,6 +22,7 @@ RUN apt update
 RUN apt upgrade -y
 RUN apt install golang-go -y
 RUN apt install make -y
+RUN apt install curl -y
 
 COPY . .
 
